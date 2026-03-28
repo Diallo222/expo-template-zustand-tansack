@@ -1,5 +1,6 @@
 /**
  * Expo config — `newArchEnabled` enables Fabric + TurboModules (see Expo prebuild / build output).
+ * Maps: set `GOOGLE_MAPS_ANDROID_API_KEY` for Google Maps on Android (see Expo Maps docs).
  */
 export default {
   name: 'expo-template-zustand-tansack',
@@ -26,13 +27,28 @@ export default {
       monochromeImage: './assets/images/android-icon-monochrome.png',
     },
     predictiveBackGestureEnabled: false,
+    config: {
+      googleMaps: {
+        apiKey: process.env.GOOGLE_MAPS_ANDROID_API_KEY ?? '',
+      },
+    },
   },
   web: {
     bundler: 'metro',
     output: 'static',
     favicon: './assets/images/favicon.png',
   },
-  plugins: ['expo-router', 'expo-image', 'expo-secure-store'],
+  plugins: [
+    'expo-router',
+    'expo-image',
+    'expo-secure-store',
+    [
+      'expo-maps',
+      {
+        requestLocationPermission: false,
+      },
+    ],
+  ],
   experiments: {
     typedRoutes: true,
     reactCompiler: true,

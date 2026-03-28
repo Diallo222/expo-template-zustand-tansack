@@ -11,6 +11,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@expo/vector-icons": "^15.1.1",
+    "@gorhom/bottom-sheet": "^5.2.8",
     "@hookform/resolvers": "^5.2.2",
     "@react-navigation/drawer": "^7.9.4",
     "@react-navigation/native": "^7.1.33",
@@ -23,6 +25,7 @@
     "expo-font": "55.0.5-canary-20260328-2049187",
     "expo-image": "55.0.7-canary-20260328-2049187",
     "expo-linking": "55.0.10-canary-20260328-2049187",
+    "expo-maps": "55.0.13-canary-20260328-2049187",
     "expo-router": "55.0.9-canary-20260328-2049187",
     "expo-secure-store": "55.0.10-canary-20260328-2049187",
     "expo-splash-screen": "55.0.14-canary-20260328-2049187",

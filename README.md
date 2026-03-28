@@ -9,6 +9,7 @@ Production-oriented Expo (SDK 55) template with **feature folders**, **TanStack 
 - TanStack Query v5, Zustand with `persist` + `react-native-mmkv`
 - Axios `httpClient` with JWT attach + refresh attempt + logout on hard 401
 - NativeWind v4 + Tailwind, Reanimated, expo-image, FlashList
+- **expo-maps** (Apple Maps on iOS, Google Maps on Android) — alpha API; use a **development build**, not Expo Go. Set `GOOGLE_MAPS_ANDROID_API_KEY` in `.env` for native Android builds ([docs](https://docs.expo.dev/versions/latest/sdk/maps/)).
 
 ## Setup
 
@@ -21,6 +22,7 @@ npx expo start
 ## Environment
 
 - Copy `.env.example` to `.env` and set `EXPO_PUBLIC_*` variables as needed.
+- For maps on Android, set `GOOGLE_MAPS_ANDROID_API_KEY` (read at **prebuild** / EAS; rebuild native app after changing it).
 - **Never** commit `.env` or put private API secrets in `EXPO_PUBLIC_*` (they are embedded in the client bundle).
 - Access tokens for the demo can live in MMKV via Zustand persist; **refresh tokens** are intended for `expo-secure-store` (see `src/lib/api/secureTokens.ts`).
 
